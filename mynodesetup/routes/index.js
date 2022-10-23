@@ -3,6 +3,7 @@ var router = express.Router();
 
 // controller require
 const registerController = require("../Controller/registerController");
+const loginController = require("../Controller/loginController");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -17,7 +18,12 @@ router.get('/get-all-user', async function (req, res, next) {
 });
 
 //# User Registration API
-router.post('/adminRegistration', registerController.register);
+router.post('/userRegistration', registerController.register);
+
+// #endregion
+
+//# User Login API
+router.post('/userLogin', loginController.login);
 
 // #endregion
 module.exports = router;
